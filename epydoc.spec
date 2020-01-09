@@ -3,7 +3,7 @@
 Summary: Automatic API documentation generation tool for Python
 Name: epydoc
 Version: 3.0.1
-Release: 5.1%{?dist}
+Release: 6%{?dist}
 Group: Development/Tools
 License: MIT
 URL: http://epydoc.sourceforge.net/
@@ -11,6 +11,7 @@ Source0: http://dl.sf.net/epydoc/epydoc-%{version}.tar.gz
 Source1: epydocgui.desktop
 Patch0: epydoc-3.0.1-nohashbang.patch
 Patch1: epydoc-3.0.1-giftopng.patch
+Patch2: epydoc-3.0.1-fix-restructuredtext-formatting.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 Requires: tkinter
 BuildRequires: python-devel
@@ -31,6 +32,7 @@ ReStructuredText, Javadoc, and plaintext.
 %setup -q
 %patch0 -p1 -b .nohashbang
 %patch1 -p1 -b .giftopng
+%patch2 -p1 -b .fix-restructuredtext-formatting
 
 
 %build
@@ -72,6 +74,9 @@ desktop-file-install \
 
 
 %changelog
+* Mon Nov 29 2010 Jaroslav Škarvada <jskarvad@redhat.com> - 3.0.1-6
+- Fixed restructuredtext formatting (#657567)
+
 * Mon Nov 30 2009 Dennis Gregorovic <dgregor@redhat.com> - 3.0.1-5.1
 - Rebuilt for RHEL 6
 
