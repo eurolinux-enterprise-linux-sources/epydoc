@@ -3,7 +3,7 @@
 Summary: Automatic API documentation generation tool for Python
 Name: epydoc
 Version: 3.0.1
-Release: 13%{?dist}
+Release: 14%{?dist}
 Group: Development/Tools
 License: MIT
 URL: http://epydoc.sourceforge.net/
@@ -77,6 +77,9 @@ desktop-file-install \
 
 
 %changelog
+* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 3.0.1-14
+- Mass rebuild 2013-12-27
+
 * Wed Feb 13 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 3.0.1-13
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_19_Mass_Rebuild
 
