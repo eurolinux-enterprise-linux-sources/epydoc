@@ -3,7 +3,7 @@
 Summary: Automatic API documentation generation tool for Python
 Name: epydoc
 Version: 3.0.1
-Release: 5.1%{?dist}.0.sl6
+Release: 5.1%{?dist}
 Group: Development/Tools
 License: MIT
 URL: http://epydoc.sourceforge.net/
@@ -11,11 +11,7 @@ Source0: http://dl.sf.net/epydoc/epydoc-%{version}.tar.gz
 Source1: epydocgui.desktop
 Patch0: epydoc-3.0.1-nohashbang.patch
 Patch1: epydoc-3.0.1-giftopng.patch
-Patch2: epydoc-3.0.1-new-docutils.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
-# Needed for some outputs, like --pdf (#522249)
-Requires: texlive-dvips
-Requires: texlive-latex
 Requires: tkinter
 BuildRequires: python-devel
 BuildRequires: desktop-file-utils
@@ -35,7 +31,7 @@ ReStructuredText, Javadoc, and plaintext.
 %setup -q
 %patch0 -p1 -b .nohashbang
 %patch1 -p1 -b .giftopng
-%patch2 -p1 -b .new-docutils
+
 
 %build
 %{__python} setup.py build
@@ -76,11 +72,6 @@ desktop-file-install \
 
 
 %changelog
-* Wed Dec 01 2010 Troy Dawson <dawson@fnal.gov> - 3.0.1-5.1.0.sl6
-- Put in patches from Fedora 13 - but left the numbering the same as RHEL6
-- Fix crash with newer docutils (#578920) - Lubomir Rintel
-- Add texlive-dvips and texlive-latex requirements (#522249) - Matthias Saou
-
 * Mon Nov 30 2009 Dennis Gregorovic <dgregor@redhat.com> - 3.0.1-5.1
 - Rebuilt for RHEL 6
 
